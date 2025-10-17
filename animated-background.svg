@@ -1,106 +1,75 @@
-<svg width="100%" height="100%" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" style="background-color: #0d1117;">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
+     viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
   <defs>
-    <style>
-      .star {
-        fill: white;
-        opacity: 0.8;
-      }
-      .code-text {
-        font-family: 'Fira Code', 'Cascadia Code', monospace;
-        font-size: 24px;
-        fill: #5af78e;
-        opacity: 0.7;
-      }
-      .terminal-cursor {
-        fill: #5af78e;
-      }
-      .data-line {
-        stroke: #5af78e;
-        stroke-width: 1;
-        opacity: 0.5;
-        stroke-dasharray: 5 5;
-        animation: dash 2s linear infinite;
-      }
-      @keyframes rotate {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-      }
-      @keyframes blink {
-        0%, 49% { opacity: 1; }
-        50%, 100% { opacity: 0; }
-      }
-      @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-5px); }
-        100% { transform: translateY(0px); }
-      }
-      @keyframes glow {
-        0% { filter: drop-shadow(0 0 5px #5af78e); }
-        50% { filter: drop-shadow(0 0 15px #5af78e); }
-        100% { filter: drop-shadow(0 0 5px #5af78e); }
-      }
-      @keyframes dash {
-        to {
-          stroke-dashoffset: -100;
-        }
-      }
-    </style>
-  </defs>
-
-  <circle cx="100" cy="50" r="1.5" class="star"/><circle cx="250" cy="180" r="1" class="star"/><circle cx="400" cy="80" r="2" class="star"/><circle cx="600" cy="200" r="1.5" class="star"/><circle cx="800" cy="40" r="1" class="star"/><circle cx="1000" cy="150" r="2" class="star"/><circle cx="1200" cy="70" r="1.5" class="star"/><circle cx="1400" cy="220" r="1" class="star"/><circle cx="1600" cy="100" r="2" class="star"/><circle cx="1800" cy="250" r="1.5" class="star"/><circle cx="100" cy="500" r="1" class="star"/><circle cx="300" cy="700" r="1.5" class="star"/><circle cx="500" cy="900" r="2" class="star"/><circle cx="700" cy="1000" r="1" class="star"/><circle cx="900" cy="800" r="1.5" class="star"/><circle cx="1100" cy="600" r="2" class="star"/><circle cx="1300" cy="400" r="1" class="star"/><circle cx="1500" cy="200" r="1.5" class="star"/><circle cx="1700" cy="500" r="2" class="star"/><circle cx="1900" cy="800" r="1" class="star"/>
-
-  <circle cx="960" cy="540" r="80" fill="#5af78e" filter="url(#glow-filter)" opacity="0.4"/>
-  <defs>
-    <filter id="glow-filter" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="20" result="glow"/>
-      <feMerge>
-        <feMergeNode in="glow"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#07110c"/>
+      <stop offset="100%" stop-color="#020504"/>
+    </radialGradient>
+    <filter id="soft-glow">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
 
-  <g transform="translate(150, 200)" style="animation: float 5s ease-in-out infinite;">
-    <text x="0" y="0" class="code-text">import hashlib</text>
-    <text x="0" y="30" class="code-text">def crack_hash(h):</text>
-  </g>
-  <g transform="translate(1600, 800)" style="animation: float 7s ease-in-out infinite reverse;">
-    <text x="0" y="0" class="code-text">System.out.println("Access Granted");</text>
-    <text x="0" y="30" class="code-text">// Remote connection established</text>
-  </g>
-  <g transform="translate(500, 950)" style="animation: float 6s ease-in-out infinite;">
-    <text x="0" y="0" class="code-text">while True:</text>
-    <text x="20" y="30" class="code-text">  exploit_vulnerability()</text>
-    <text x="0" y="60" class="code-text">try:</text>
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+
+  <g transform="translate(960,540)" text-anchor="middle" filter="url(#soft-glow)">
+    <circle r="160" fill="none" stroke="#00ffb0" stroke-opacity="0.25" stroke-width="8">
+      <animate attributeName="stroke-opacity" values="0.25;0.75;0.25" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <text y="-10" font-size="120" font-family="monospace" fill="#00ffb0">{;}</text>
+    <text y="90"  font-size="28"  font-family="ui-monospace, Menlo, Consolas" fill="#9affc8">Code • Compile • Conquer</text>
   </g>
 
-  <rect x="700" y="50" width="500" height="250" rx="10" ry="10" fill="rgba(0,0,0,0.6)" stroke="#5af78e" stroke-width="2"/>
-  <rect x="710" y="60" width="480" height="230" fill="#0d1117"/>
-  <circle cx="725" cy="75" r="5" fill="#ff605c"/><circle cx="740" cy="75" r="5" fill="#ffbd44"/><circle cx="755" cy="75" r="5" fill="#00ca4e"/>
-  <text x="720" y="110" class="code-text" style="font-size: 20px;">$ sudo nmap -sV -p- target.host</text>
-  <text x="720" y="140" class="code-text" style="font-size: 20px;">> attempting backdoor entry...</text>
-  <text x="720" y="170" class="code-text" style="font-size: 20px;">$ _</text>
-  <rect x="735" y="155" width="10" height="20" class="terminal-cursor" style="animation: blink 1s step-end infinite;"/>
+  <g transform="translate(960,540)" stroke="#00ffb0" stroke-opacity="0.2" fill="none">
+    <circle r="260"/>
+    <circle r="380"/>
+    <circle r="520"/>
+  </g>
 
-  <line x1="100" y1="100" x2="400" y2="400" class="data-line" style="animation-delay: 0s;"/>
-  <line x1="1800" y1="200" x2="1500" y2="500" class="data-line" style="animation-delay: 1s;"/>
-  <line x1="300" y1="800" x2="600" y2="1000" class="data-line" style="animation-delay: 2s;"/>
-  <line x1="1000" y1="900" x2="1300" y2="700" class="data-line" style="animation-delay: 3s;"/>
-  <line x1="50" y1="700" x2="250" y2="500" class="data-line" style="animation-delay: 4s;"/>
-  <line x1="1900" y1="1000" x2="1700" y2="800" class="data-line" style="animation-delay: 0.5s;"/>
+  <g transform="translate(960,540)" font-family="monospace" font-size="42" fill="#c2ffd9" filter="url(#soft-glow)">
+    
+    <g>
+      <g transform="rotate(0)">   <text x="0" y="-260">git</text></g>
+      <g transform="rotate(90)">  <text x="0" y="-260">API</text></g>
+      <g transform="rotate(180)"> <text x="0" y="-260">JSON</text></g>
+      <g transform="rotate(270)"> <text x="0" y="-260">&lt;/&gt;</text></g>
+      <animateTransform attributeName="transform" type="rotate"
+                        from="0" to="360" dur="12s" repeatCount="indefinite"/>
+    </g>
 
-  <g transform="translate(200, 800) scale(0.8)">
-    <g style="animation: rotate 10s linear infinite;">
-      <circle cx="0" cy="0" r="40" fill="#2d3748"/>
-      <path d="M0 -40 L10 -45 L10 -35 Z M0 40 L10 45 L10 35 Z M-40 0 L-45 10 L-35 10 Z M40 0 L45 10 L35 10 Z" fill="#2d3748"/>
-      <circle cx="0" cy="0" r="15" fill="#0d1117" stroke="#5af78e" stroke-width="2"/>
+    <g>
+      <g transform="rotate(0)">   <text x="0" y="-380">npm install</text></g>
+      <g transform="rotate(120)"> <text x="0" y="-380">#bash</text></g>
+      <g transform="rotate(240)"> <text x="0" y="-380">React</text></g>
+      <animateTransform attributeName="transform" type="rotate"
+                        from="360" to="0" dur="18s" repeatCount="indefinite"/>
+    </g>
+
+    <g>
+      <g transform="rotate(0)">   <text x="0" y="-520">Python</text></g>
+      <g transform="rotate(90)">  <text x="0" y="-520">async/await</text></g>
+      <g transform="rotate(180)"> <text x="0" y="-520">Docker</text></g>
+      <g transform="rotate(270)"> <text x="0" y="-520">λ</text></g>
+      <animateTransform attributeName="transform" type="rotate"
+                        from="0" to="360" dur="28s" repeatCount="indefinite"/>
     </g>
   </g>
-  <g transform="translate(1700, 150) scale(0.6)">
-    <g style="animation: rotate 15s linear infinite reverse;">
-      <circle cx="0" cy="0" r="30" fill="#2d3748"/>
-      <path d="M0 -30 L8 -33 L8 -27 Z M0 30 L8 33 L8 27 Z M-30 0 L-33 8 L-27 8 Z M30 0 L33 8 L27 8 Z" fill="#2d3748"/>
-      <circle cx="0" cy="0" r="10" fill="#0d1117" stroke="#5af78e" stroke-width="2"/>
+
+  <g transform="translate(960,540)" stroke="#00ffb0" stroke-opacity="0.35" fill="none">
+    <g stroke-dasharray="12 14">
+      <circle r="260">
+        <animateTransform attributeName="transform" type="rotate"
+                          from="0" to="-360" dur="20s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="380">
+        <animateTransform attributeName="transform" type="rotate"
+                          from="0" to="360" dur="32s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="520">
+        <animateTransform attributeName="transform" type="rotate"
+                          from="0" to="-360" dur="44s" repeatCount="indefinite"/>
+      </circle>
     </g>
   </g>
 </svg>
