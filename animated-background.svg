@@ -8,18 +8,11 @@
       .code-text {
         font-family: 'Fira Code', 'Cascadia Code', monospace;
         font-size: 24px;
-        fill: #5af78e; /* Green for hacking */
+        fill: #5af78e;
         opacity: 0.7;
       }
       .terminal-cursor {
         fill: #5af78e;
-      }
-      .binary-digit {
-        font-family: 'Fira Code', monospace;
-        font-size: 18px;
-        fill: #5af78e;
-        opacity: 0;
-        animation: fadeAndMove 10s linear infinite;
       }
       .data-line {
         stroke: #5af78e;
@@ -27,13 +20,6 @@
         opacity: 0.5;
         stroke-dasharray: 5 5;
         animation: dash 2s linear infinite;
-      }
-      .matrix-column {
-        font-family: 'Fira Code', monospace;
-        font-size: 20px;
-        fill: #5af78e;
-        opacity: 0;
-        animation: matrixRain 10s linear infinite;
       }
       @keyframes rotate {
         from { transform: rotate(0deg); }
@@ -53,44 +39,15 @@
         50% { filter: drop-shadow(0 0 15px #5af78e); }
         100% { filter: drop-shadow(0 0 5px #5af78e); }
       }
-      @keyframes fadeAndMove {
-        0% { transform: translateY(0px); opacity: 0; }
-        10% { opacity: 0.8; }
-        100% { transform: translateY(200px); opacity: 0; }
-      }
       @keyframes dash {
         to {
           stroke-dashoffset: -100;
         }
       }
-      @keyframes matrixRain {
-        0% { transform: translateY(-100px); opacity: 0; }
-        1% { opacity: 1; }
-        100% { transform: translateY(1180px); opacity: 0; }
-      }
     </style>
   </defs>
 
-  <circle cx="100" cy="50" r="1.5" class="star"/>
-  <circle cx="250" cy="180" r="1" class="star"/>
-  <circle cx="400" cy="80" r="2" class="star"/>
-  <circle cx="600" cy="200" r="1.5" class="star"/>
-  <circle cx="800" cy="40" r="1" class="star"/>
-  <circle cx="1000" cy="150" r="2" class="star"/>
-  <circle cx="1200" cy="70" r="1.5" class="star"/>
-  <circle cx="1400" cy="220" r="1" class="star"/>
-  <circle cx="1600" cy="100" r="2" class="star"/>
-  <circle cx="1800" cy="250" r="1.5" class="star"/>
-  <circle cx="100" cy="500" r="1" class="star"/>
-  <circle cx="300" cy="700" r="1.5" class="star"/>
-  <circle cx="500" cy="900" r="2" class="star"/>
-  <circle cx="700" cy="1000" r="1" class="star"/>
-  <circle cx="900" cy="800" r="1.5" class="star"/>
-  <circle cx="1100" cy="600" r="2" class="star"/>
-  <circle cx="1300" cy="400" r="1" class="star"/>
-  <circle cx="1500" cy="200" r="1.5" class="star"/>
-  <circle cx="1700" cy="500" r="2" class="star"/>
-  <circle cx="1900" cy="800" r="1" class="star"/>
+  <circle cx="100" cy="50" r="1.5" class="star"/><circle cx="250" cy="180" r="1" class="star"/><circle cx="400" cy="80" r="2" class="star"/><circle cx="600" cy="200" r="1.5" class="star"/><circle cx="800" cy="40" r="1" class="star"/><circle cx="1000" cy="150" r="2" class="star"/><circle cx="1200" cy="70" r="1.5" class="star"/><circle cx="1400" cy="220" r="1" class="star"/><circle cx="1600" cy="100" r="2" class="star"/><circle cx="1800" cy="250" r="1.5" class="star"/><circle cx="100" cy="500" r="1" class="star"/><circle cx="300" cy="700" r="1.5" class="star"/><circle cx="500" cy="900" r="2" class="star"/><circle cx="700" cy="1000" r="1" class="star"/><circle cx="900" cy="800" r="1.5" class="star"/><circle cx="1100" cy="600" r="2" class="star"/><circle cx="1300" cy="400" r="1" class="star"/><circle cx="1500" cy="200" r="1.5" class="star"/><circle cx="1700" cy="500" r="2" class="star"/><circle cx="1900" cy="800" r="1" class="star"/>
 
   <circle cx="960" cy="540" r="80" fill="#5af78e" filter="url(#glow-filter)" opacity="0.4"/>
   <defs>
@@ -107,12 +64,10 @@
     <text x="0" y="0" class="code-text">import hashlib</text>
     <text x="0" y="30" class="code-text">def crack_hash(h):</text>
   </g>
-
   <g transform="translate(1600, 800)" style="animation: float 7s ease-in-out infinite reverse;">
     <text x="0" y="0" class="code-text">System.out.println("Access Granted");</text>
     <text x="0" y="30" class="code-text">// Remote connection established</text>
   </g>
-
   <g transform="translate(500, 950)" style="animation: float 6s ease-in-out infinite;">
     <text x="0" y="0" class="code-text">while True:</text>
     <text x="20" y="30" class="code-text">  exploit_vulnerability()</text>
@@ -121,43 +76,11 @@
 
   <rect x="700" y="50" width="500" height="250" rx="10" ry="10" fill="rgba(0,0,0,0.6)" stroke="#5af78e" stroke-width="2"/>
   <rect x="710" y="60" width="480" height="230" fill="#0d1117"/>
-  <circle cx="725" cy="75" r="5" fill="#ff605c"/>
-  <circle cx="740" cy="75" r="5" fill="#ffbd44"/>
-  <circle cx="755" cy="75" r="5" fill="#00ca4e"/>
-
-  <text x="720" y="110" class="code-text" style="font-size: 20px;">$ sudo apt update && upgrade</text>
-  <text x="720" y="140" class="code-text" style="font-size: 20px;">$ attempting backdoor entry...</text>
+  <circle cx="725" cy="75" r="5" fill="#ff605c"/><circle cx="740" cy="75" r="5" fill="#ffbd44"/><circle cx="755" cy="75" r="5" fill="#00ca4e"/>
+  <text x="720" y="110" class="code-text" style="font-size: 20px;">$ sudo nmap -sV -p- target.host</text>
+  <text x="720" y="140" class="code-text" style="font-size: 20px;">> attempting backdoor entry...</text>
   <text x="720" y="170" class="code-text" style="font-size: 20px;">$ _</text>
   <rect x="735" y="155" width="10" height="20" class="terminal-cursor" style="animation: blink 1s step-end infinite;"/>
-
-  <g id="matrix-rain">
-    <script>
-      const matrixContainer = document.getElementById('matrix-rain');
-      const chars = '0123456789ABCDEFJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]{}|;:",./<>?`~';
-      const numColumns = Math.floor(1920 / 20); // Adjust based on font size
-      const maxColumnHeight = Math.floor(1080 / 20);
-
-      for (let i = 0; i < numColumns; i++) {
-        const x = i * 20;
-        const duration = 5 + Math.random() * 10; // Random duration for each column
-        const delay = Math.random() * -duration; // Random start delay
-
-        for (let j = 0; j < maxColumnHeight; j++) {
-          const char = chars[Math.floor(Math.random() * chars.length)];
-          const y = j * 20;
-
-          const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-          text.setAttribute('x', x);
-          text.setAttribute('y', y);
-          text.setAttribute('class', 'matrix-column');
-          text.textContent = char;
-          text.style.animationDelay = `${delay}s, ${delay + Math.random()}s`; // Staggered char animation
-          text.style.animationDuration = `${duration}s`;
-          matrixContainer.appendChild(text);
-        }
-      }
-    </script>
-  </g>
 
   <line x1="100" y1="100" x2="400" y2="400" class="data-line" style="animation-delay: 0s;"/>
   <line x1="1800" y1="200" x2="1500" y2="500" class="data-line" style="animation-delay: 1s;"/>
@@ -166,31 +89,6 @@
   <line x1="50" y1="700" x2="250" y2="500" class="data-line" style="animation-delay: 4s;"/>
   <line x1="1900" y1="1000" x2="1700" y2="800" class="data-line" style="animation-delay: 0.5s;"/>
 
-
-  <g id="binary-stream">
-    <script>
-      const binaryContainer = document.getElementById('binary-stream');
-      const numDigits = 50; // Number of falling binary digits
-
-      for (let i = 0; i < numDigits; i++) {
-        const digit = Math.random() < 0.5 ? '0' : '1';
-        const x = Math.random() * 1920;
-        const y = Math.random() * -200; // Start off-screen
-        const delay = Math.random() * 10; // Random delay for staggered drops
-        const duration = 5 + Math.random() * 5; // Random fall duration
-
-        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-        text.setAttribute('x', x);
-        text.setAttribute('y', y);
-        text.setAttribute('class', 'binary-digit');
-        text.textContent = digit;
-        text.style.animationDelay = `${delay}s`;
-        text.style.animationDuration = `${duration}s`;
-        binaryContainer.appendChild(text);
-      }
-    </script>
-  </g>
-
   <g transform="translate(200, 800) scale(0.8)">
     <g style="animation: rotate 10s linear infinite;">
       <circle cx="0" cy="0" r="40" fill="#2d3748"/>
@@ -198,7 +96,6 @@
       <circle cx="0" cy="0" r="15" fill="#0d1117" stroke="#5af78e" stroke-width="2"/>
     </g>
   </g>
-
   <g transform="translate(1700, 150) scale(0.6)">
     <g style="animation: rotate 15s linear infinite reverse;">
       <circle cx="0" cy="0" r="30" fill="#2d3748"/>
@@ -206,5 +103,4 @@
       <circle cx="0" cy="0" r="10" fill="#0d1117" stroke="#5af78e" stroke-width="2"/>
     </g>
   </g>
-
 </svg>
